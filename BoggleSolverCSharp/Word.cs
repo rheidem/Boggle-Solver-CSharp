@@ -3,35 +3,35 @@ namespace BoggleSolverCSharp
 {
     public class Word
     {
-        public string text { get; set; }
-        public int score { get; set; }
+        public string Text { get; set; }
+        public int Score { get; set; }
 
         public Word(string text_in)
         {
-            text = text_in;
+            Text = text_in;
 
             // Assign a score to the word based on its length
-            int len = text.Length;
+            int len = Text.Length;
 
             if (len < 5)
             {
-                score = 1;
+                Score = 1;
             }
             else if (len == 5)
             {
-                score = 2;
+                Score = 2;
             }
             else if (len == 6)
             {
-                score = 3;
+                Score = 3;
             }
             else if (len == 7)
             {
-                score = 5;
+                Score = 5;
             }
             else
             {
-                score = 11;
+                Score = 11;
             }
         }
     }

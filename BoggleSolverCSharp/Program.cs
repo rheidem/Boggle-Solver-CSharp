@@ -6,7 +6,12 @@ namespace BoggleSolverCSharp
     {
         static void Main(string[] args)
         {
-            Console.WriteLine("Hello World!");
+            Solutions s = new Solutions();
+            s.Add("dog");
+            s.Add("fish");
+            s.Add("cat");
+            s.Add("crocodile");
+            s.Print();
         }
     }
 }
