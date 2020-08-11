@@ -78,7 +78,7 @@ namespace BoggleSolverCSharp
         }
 
         // Solves the game and returns the solutions
-        Solutions Solve(string textfile)
+        public Solutions Solve(string textfile)
         {
             // Create a Dictionary and load in the words
             WordDict d = new WordDict(MinWordSize);
