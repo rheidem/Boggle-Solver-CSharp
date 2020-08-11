@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Text;
 
 namespace BoggleSolverCSharp
 {
@@ -44,14 +45,16 @@ namespace BoggleSolverCSharp
 
                 // Get the new character and add on to the current path
                 char newChar = letters[row][col];
-                string newPath = current + newChar;
+                StringBuilder newPath = new StringBuilder();
+                newPath.Append(current);
+                newPath.Append(newChar);
 
                 if (newPath.Length >= MinWordSize)
                 {
                     // If the word is in the Dictionary and not in the Solutions, add to Solutions
-                    if (dict.Contains(newPath) && !solns.Contains(newPath))
+                    if (dict.Contains(newPath.ToString()) && !solns.Contains(newPath.ToString()))
                     {
-                        solns.Add(newPath);
+                        solns.Add(newPath.ToString());
                     }
                 }
 
@@ -67,7 +70,7 @@ namespace BoggleSolverCSharp
                             // Put new letter in the solution path
                             letters[row][col] = '*';
 
-                            SolveHelper(ref dict, ref solns, row + vert, col + hor, newPath);
+                            SolveHelper(ref dict, ref solns, row + vert, col + hor, newPath.ToString());
 
                             // Effectively take new letter out of solution path
                             letters[row][col] = newChar;

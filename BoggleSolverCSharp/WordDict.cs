@@ -101,9 +101,12 @@ namespace BoggleSolverCSharp
                 foreach(string s in l)
                 {
                     // if word in v starts with prefix of 'input' return true
-                    if (s.Substring(0, input.Length) == input)
+                    if (s.Length >= input.Length)
                     {
-                        return true;
+                        if (s.Substring(0, input.Length) == input)
+                        {
+                            return true;
+                        }
                     }
                 }
 
